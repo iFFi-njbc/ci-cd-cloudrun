@@ -223,12 +223,4 @@ public class EmployeeController {
 	    return new ResponseEntity<List<EmployeeDTO>>(dto, HttpStatus.OK);
 	}
 
-	@GetMapping("/employeesByName")
-	@ApiOperation(value = "GET LIST OF EMPLOYEES BY NAME")
-	public ResponseEntity<List<EmployeeDTO>> getEmployeesByName(@RequestParam String name) {
-		List<Employee> employees = empService.getEmployeesByName(name);
-		List<EmployeeDTO> dto = convert.entityToDto(employees);
-		return new ResponseEntity<List<EmployeeDTO>>(dto, HttpStatus.OK);
-	}
-
 }

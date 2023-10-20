@@ -110,12 +110,4 @@ public class DepartmentController {
 		return dto;
 	}
 
-	@GetMapping("departments/getByNames")
-	@ApiOperation(value = "GET LIST OF ALL DEPARTMENTS WITH THE GIVEN NAME")
-	public List<DepartmentDTO> getByNames(@RequestParam String name)
-	{
-		List<Department> departments = dService.getDepartmentsByName(name);
-		List<DepartmentDTO> dto = convert.entityToDto(departments);
-		return dto;
-	}
 }
